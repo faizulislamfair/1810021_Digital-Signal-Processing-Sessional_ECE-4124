@@ -12,7 +12,7 @@
 <br>                 
     Time delay basically means a delay that separates the occurrence of two events, it is the amount of time a signal takes to propagate itself through a system or under specified processing conditions. There is a huge significance of time delay in signal processing applications. It occurs in the various stages of signal processing such as DSP filters, Multirate filters, signal transformation, etc.
 
-<br>
+<br><br>
                         
 
 In signal processing, cross-correlation is a measure of similarity of two series as a function of the displacement of one relative to the other. This is also known as a sliding dot product or sliding inner-product. It is commonly used for searching a long signal for a shorter, known feature. It has applications in pattern recognition, single particle analysis, electron tomography, averaging, cryptanalysis, and neurophysiology. The cross-correlation is similar in nature to the convolution of two functions.
@@ -72,7 +72,7 @@ fprintf('Max Index = %d\n', max(s3));
 <div align="center">
 <img src="./outputWaveshape_exp-4.png" alt="Figure-1: Cross-correlation of Delayed Signal Graphical Output">
 <br>
-<h3> Figure-1: Cross-correlation of Delayed Signal Graphical Output </h3> 
+<h4> Figure-1: Cross-correlation of Delayed Signal Graphical Output </h4> 
 </div>
 
 
@@ -80,7 +80,7 @@ fprintf('Max Index = %d\n', max(s3));
 
 <div align="center">
 <img src="./result_exp-4.png" alt="Figure-2: Result" width="300">
-<h3>Figure-2: Result </h3> 
+<h4>Figure-2: Result </h4> 
 
 </div>
 <br><br>
@@ -92,4 +92,6 @@ At first, a signal was plotted, after that the delayed signal was plotted with t
 
 <br><br>
 
-### **<u>Conclusion:</u>**  The experiment was carried out successfully.
+### **<u>Conclusion:</u>**
+<br> 
+The experiment was carried out successfully.
