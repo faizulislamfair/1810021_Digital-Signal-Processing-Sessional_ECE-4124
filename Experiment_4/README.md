@@ -1,36 +1,5 @@
-<h3 align='center'>Heaven’s Light is Our Guide</h3>
-<h1 align='center'>Rajshahi University of Engineering & Technology<h1>
-
-<div align="center">
-<img src="./logo.png" alt="Figure-2: Result" width="200">
-</div>
-
-<h2><u>Course Code</u>: ECE 4124</h2>
-<h2><u>Course Title</u>: Digital Signal Processing Sessional</h2>
-
-<br>
-<br>
-
-<div align='center' style='display: flex; justify-content: space-between; align-items: center;'>
-<div>
-<h2><u>Submitted By,</u></h2>    
-<h2>S.M. Faizul Islam Fair</h2>                                                   
-<h2>Roll: 1810021                                                            </h2>                                                   
-</div>
-<div>
-<h2><u>Submitted To,</u></h2>
-<h2>Hafsa Binte Kibria                                             </h2>  
-<h2>Lecturer, Dept. of ECE, RUET</h2>  
-</div>
-</div>
-
-
-<br>
-<br>
-<br>
-<br>
-<br>
-
+## **Roll: 1810021**
+## **Course Code: ECE 4124**
 
 ### **<u>Experiment No:</u> 04**
 
@@ -104,7 +73,7 @@ fprintf('Max Index = %d\n', max(s3));
 <br>
 
 <div align="center">
-<img src="./Experiment_4/outputWaveshape_exp-4.png" alt="Figure-1: Cross-correlation of Delayed Signal Graphical Output">
+<img src="./outputWaveshape_exp-4.png">
 <br>
 <h4> Figure-1: Cross-correlation of Delayed Signal Graphical Output </h4> 
 </div>
@@ -113,7 +82,7 @@ fprintf('Max Index = %d\n', max(s3));
 <br><br>
 
 <div align="center">
-<img src="./Experiment_4/result_exp-4.png" alt="Figure-2: Result" width="300">
+<img src="./result_exp-4.png" alt="Figure-2: Result" width="300">
 <h4>Figure-2: Result </h4> 
 
 </div>
