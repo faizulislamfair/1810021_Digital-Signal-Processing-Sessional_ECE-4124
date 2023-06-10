@@ -11,7 +11,7 @@
 <br>
 <br>
 
-<div align='center' style='display: flex; justify-content: space-between; align-items: center;'>
+<div style='display: flex; justify-content: space-between; align-items: center;'>
 <div>
 <h2><u>Submitted By,</u></h2>    
 <h2>S.M. Faizul Islam Fair</h2>                                                   
