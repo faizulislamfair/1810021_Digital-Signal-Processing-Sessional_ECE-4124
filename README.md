@@ -11,17 +11,17 @@
 <br>
 <br>
 
-<div style='display: flex; justify-content: space-between; align-items: center;'>
+<div style='display: flex; justify-content: space-between;'>
 <div>
-<h2><u>Submitted By,</u></h2>    
-<h2>S.M. Faizul Islam Fair</h2>                                                   
-<h2>Roll: 1810021                                                            </h2>                                                   
+<h2><u>Submitted To,</u>
+<br>Hafsa Binte Kibria                                             <br>Lecturer, Dept. of ECE, RUET</h2>  
 </div>
 <div>
-<h2><u>Submitted To,</u></h2>
-<h2>Hafsa Binte Kibria                                             </h2>  
-<h2>Lecturer, Dept. of ECE, RUET</h2>  
+<h2><u>Submitted By,</u><br>
+S.M. Faizul Islam Fair<br>                                                   
+Roll: 1810021                                                            </h2>                                                   
 </div>
+
 </div>
 
 
