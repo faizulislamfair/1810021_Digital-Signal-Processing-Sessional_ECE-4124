@@ -183,7 +183,6 @@ title('Result using built-in function');
 
 ### **<u>Discussion:</u>** 
 <br>
-:
  Auto-correlation of a signal and cross-correlation of two signals were carried out
 without using any built-in function. The built-in function was also used to check whether the
 previous output was similar or not. The obtained result was same in both the cases. Signals, their
