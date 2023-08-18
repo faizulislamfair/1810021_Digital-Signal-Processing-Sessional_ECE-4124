@@ -43,6 +43,552 @@ Roll: 1810021                                                            </h2>
 <br>
 <br>
 
+<div id='exp_1'>
+<br>
+<br>
+
+### **<u>Experiment No:</u> 01**
+
+### **<u>Experiment Date:</u> 19.03.2023**
+
+### **<u>Experiment Name:</u> Study of Convolution of Two Signals using MATLAB** 
+
+<br>
+
+
+### **<u>Theory:</u>**
+                 
+<br>                 
+                   The convolution of two signals is a mathematical operation that combines the two signals to produce a third signal that represents how one signal modifies the other as they are combined. It is a fundamental operation in signal processing, used for various applications such as filtering, feature extraction, image processing, and many more.
+<br>
+<br>
+
+                                          y(n) = ∑ x(n)*h(n-k) for k = - ∞ to + ∞
+
+
+<br><br>
+                        
+
+There are two types of convolutions: 
+
+i). Continuous convolution: Continuous convolution is used to describe the convolution of two continuous-time signal. It is defined as follows: 
+Given two continuous-time signal x(t) and h(t), their continuous convolution y(t) is given by: 
+                                                          y(t) = x(t) * h(t)
+
+
+
+ii). Discrete convolution: Discrete convolution is used to describe the convolution of two discrete-time signal. It is defined as follows: 
+                                                         y(n) = x(n) * h(n)
+                
+
+
+
+
+<br> <br>
+
+
+
+### **<u>Code:</u>**
+<br>
+
+```clc
+x = [ 1 2 3 4]; 
+
+h = [ 4 4 3 2]; 
+
+
+m=length(x); 
+l=length(h); 
+X=[x,zeros(1,l)]; 
+H=[h,zeros(1,m)]; 
+
+
+z=[]; 
+for i=1:m 
+      g=h.*x(i); 
+      z=[z;g]; 
+end 
+
+
+[r c] = size(z); 
+k = r+c; 
+t =2; 
+Y =[]; 
+cd =0; 
+
+
+while(t<=k) 
+         for i=1:r 
+               for j=1:c 
+                    if((i+j)==t) 
+                          cd = cd+ z(i,j); 
+                    end 
+                end 
+           end 
+           t = t+1; 
+          Y = [Y cd]; 
+           cd =0; 
+end 
+
+subplot(3,1,1); 
+stem(x); 
+xlabel('n'); 
+ylabel('x'); 
+title('1st Signal'); 
+subplot(3,1,2); 
+stem(h); 
+xlabel('n'); 
+ylabel('h'); 
+title('2nd Signal'); 
+
+
+subplot(3,1,3); 
+stem(Y); 
+xlabel('n'); 
+ylabel('Y'); 
+title('Convoluted Signal');
+
+```
+
+
+<br><br>
+
+
+
+### **<u>Output:</u>** 
+<br>
+
+<div align="center">
+<img src="./Experiment_1/exp_1.png">
+<br>
+<h4> Figure-1: Convolution of Two Signals </h4> 
+</div>
+
+
+<br><br>
+
+
+
+
+### **<u>Discussion:</u>** 
+<br>
+Here, we convoluted two signals without using the conv() function. The conv() function was also used to check whether the previous output was similar or not. The obtained result was same in both the cases.
+
+<br><br>
+
+### **<u>Conclusion:</u>**
+<br> 
+The experiment was carried out successfully.
+
+</div>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div id='exp_2'>
+<br>
+<br>
+
+### **<u>Experiment No:</u> 02**
+
+### **<u>Experiment Date:</u> 03.05.2023**
+
+### **<u>Experiment Name:</u> Study of Circular Convolution, Plotting of Figures, Summation, Subtraction and Particular Shapes of Two Signals Using MATLAB** 
+
+<br>
+
+
+### **<u>Theory:</u>**
+                 
+<br>                 
+   Circular convolution is a mathematical operation used in signal processing to analyze periodic signals. In circular convolution, the signal wraps around at the edges instead of being truncated or zero-padded. This operation is performed by taking the Discrete Fourier Transform (DFT) of two signals, multiplying them pointwise, and taking the Inverse Discrete Fourier Transform (IDFT) of the result. The output is a circular convolution of the two input signals. 
+
+<br><br>
+                        
+
+
+The circular convolution of two signals x[n] and h[n] can be expressed mathematically as:
+<br> <br>
+
+                           y[n] = (1/N) * sum{k=0 to N-1} x[k] * h[(n-k) mod N] 
+<br>
+where N is the length of the input signals, and mod represents the modulo operation. This formula calculates the convolution of two signals in a circular manner by taking the sum of the product of the samples of the two signals, where the sample index of the second signal is shifted by k samples. 
+
+
+
+
+<br> <br>
+
+Circular convolution is used in various applications, such as in digital signal processing, image processing, and communication systems. In these applications, circular convolution is used to filter, modulate, or demodulate signals. Additionally, circular convolution is used to implement circular convolutional codes, which are used in error correction coding in communication systems.
+
+<br><br>
+<br>
+
+### **<u>Code:</u>**
+<br>
+
+#### Problem-1:
+
+```clc
+x = input('Enter the first signal: ');
+subplot(3, 1, 1);
+stem(x);
+
+h = input('Enter the second signal: ');
+subplot(3, 1, 2);
+stem(h);
+
+N = length(x);
+M = length(h);
+
+if N > M
+    h = [h zeros(1,N-M)];
+else
+    x = [x zeros(1,M-N)];
+end
+
+y = zeros(1, N);
+for n = 1:N
+    for m = 1:N
+        k = mod(n - m, N) + 1;
+        y(n) = y(n) + x(m) * h(k);
+    end
+end
+
+disp('Circular Convolution Output: ');
+disp(y);
+subplot(3, 1, 3);
+stem(y);
+```
+
+
+<br><br>
+
+#### Problem-2:
+```
+n1 = [0, 0, 0, 2, 2, 2, 1, 1, 1, 0, 2]
+subplot(4, 1, 1);
+stem(n1);
+title('1st signal');
+xlabel('Index');
+ylabel('Value');
+
+n2 = [2, 2, 0, 1, 1, 1, 0, 0, 0, 0, 3]
+subplot(4, 1, 2);
+stem(n2);
+title('2nd signal');
+xlabel('Index');
+ylabel('Value');
+
+n3=n1+n2;
+subplot(4, 1, 3);
+stem(n3);
+title('Summation');
+xlabel('Index');
+ylabel('Value');
+
+
+n4=n1-n2;
+subplot(4, 1, 4);
+stem(n4);
+title('Subtraction');
+xlabel('Index');
+ylabel('Value');
+```
+
+
+<br><br>
+#### Problem-3:
+
+```
+x=[0 0 1 1 1 1 0 0];
+t=0:1:7;
+subplot(2,1,1);
+plot(t,x);
+
+y=[0 1 1 2 2 1 1 0];
+t=0:1:7;
+subplot(2,1,2);
+plot(t,y);
+```
+
+<br><br>
+
+
+
+### **<u>Output:</u>** 
+<br>
+
+<div align="center">
+<img src="./Experiment_2/circular_convolution.png">
+<br>
+<h4> Figure-1: Circular Convolution of Two Signals </h4> 
+</div>
+
+
+<br><br>
+
+<div align="center">
+<img src="./Experiment_2/circular_convolution_output.png" alt="Figure-2: Result" width="300">
+<h4>Figure-2: Result </h4> 
+
+</div>
+<br><br>
+
+
+<div align="center">
+<img src="./Experiment_2/sum_subtract.png">
+<br>
+<h4> Figure-3: Two Signals, Summation and Subtraction </h4> 
+</div>
+
+
+<br><br>
+
+
+<div align="center">
+<img src="./Experiment_2/one_figure.png">
+<br>
+<h4> Figure-4: Particular Shape of Two Signals</h4> 
+</div>
+
+
+<br><br>
+
+
+### **<u>Discussion:</u>** 
+<br>
+Circular convolution of two signals was carried out without using any built-in
+function. The built-in function was also used to check whether the previous output was similar or
+not. The obtained result was same in both the cases. Then two signals, their summation and
+subtraction were also plotted as well as particular shape of two signals.
+<br><br>
+
+### **<u>Conclusion:</u>**
+<br> 
+The experiment was carried out successfully.
+
+</div>
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div id='exp_3'>
+<br>
+<br>
+### **<u>Experiment No:</u> 03**
+
+### **<u>Experiment Date:</u> 08.05.2023**
+
+### **<u>Experiment Name:</u> Study of Auto-correlation & Cross-correlation Using MATLAB** 
+
+<br>
+
+
+### **<u>Theory:</u>**
+                 
+<br>                 
+  Auto-correlation and cross-correlation are statistical measures used in signal
+processing and data analysis to analyze the similarity or relationship between signals. Autocorrelation measures the similarity of a signal with a time-shifted version of itself, while crosscorrelation measures the similarity between two different signals.
+<br><br>
+                        
+
+
+Auto-correlation:
+<br>
+ Auto-correlation is a measure of the similarity between a signal and a delayed
+(shifted) version of itself. It is commonly used to detect repeating patterns or periodicity in a
+signal. In auto-correlation, the correlation is calculated at different time lags.
+
+
+
+
+
+<br> <br>
+Cross-correlation:
+<br>
+ Cross-correlation is a measure of the similarity between two different signals.
+It is used to determine the relationship, time delay, or similarity between two signals. Crosscorrelation is often used in applications such as signal matching, time delay estimation, and
+pattern recognition.
+
+
+<br><br>
+By studying the auto-correlation and cross-correlation of signals, we can gain insights into the
+periodicity, similarity, and time relationships between signals, which can be valuable in
+applications such as signal processing, time series analysis, and pattern recognition.
+
+<br><br>
+<br>
+
+### **<u>Code:</u>**
+<br>
+
+#### Problem-1:
+
+```clc
+x=input('Enter your sequence:');
+h=fliplr(x);
+a=length(x);
+b=length(h);
+n=a+b-1;
+y=zeros(1,n);
+l=1:n;
+for i=0:n
+for j=0:n
+if((i-j+1)>0 && (i-j+1)<=b && (j+1)<=a)
+y(i+1)=y(i+1)+x(j+1).*h(i-j+1);
+end
+end
+end
+b=xcorr(x,x)
+disp(y)
+subplot(4,1,1)
+stem(x)
+xlabel('n');
+ylabel('x[n]');
+title('Sequence1');
+subplot(4,1,2)
+stem(h)
+xlabel('n');
+ylabel('h[n]');
+title('Sequence2');
+subplot(4,1,3);
+stem(l,y)
+xlabel('n');
+ylabel('y[n]');
+title('Result');
+subplot(4,1,4);
+stem(b)
+xlabel('n');
+ylabel('y[n]');
+title('Result using built-in function');
+```
+
+
+<br><br>
+
+#### Problem-2:
+```
+x = input('Enter the 1st signal sequence:');
+h = input('Enter the 2nd signal sequence: ');
+z=fliplr(h);
+a=length(x);
+b=length(z);
+n=a+b-1;
+y=zeros(1,n);
+l=1:n;
+for i=0:n
+ for j=0:n
+ if((i-j+1)>0 && (i-j+1)<=b && (j+1)<=a)
+ y(i+1)=y(i+1)+x(j+1).*z(i-j+1);
+ end
+ end
+end
+b=xcorr(x,h)
+disp(y)
+subplot(4, 1, 1);
+stem(x);
+xlabel('n');
+ylabel('x[n]');
+title('1st Sequence');
+subplot(4, 1, 2);
+stem(h);
+xlabel('n');
+ylabel('z[n]');
+title('2nd Sequence');
+subplot(4, 1, 3);
+stem(l,y);
+xlabel('n');
+ylabel('y[n]');
+title('Result');
+subplot(4, 1, 4);
+stem(b);
+xlabel('n');
+ylabel('b[n]');
+title('Result using built-in function');
+```
+
+
+<br><br>
+
+
+
+### **<u>Output:</u>** 
+<br>
+
+#### Problem-1:
+
+<div align="center">
+<img src="./Experiment_3/auto.png">
+<br>
+<h4> Figure-1: Auto-correlation Graphical Output </h4> 
+</div>
+
+
+<br><br>
+
+<div align="center">
+<img src="./Experiment_3/auto_2.png" alt="Figure-2: Result" width="300">
+<h4>Figure-2: Auto-correlation Result</h4> 
+
+</div>
+<br><br>
+
+#### Problem-2:
+
+<div align="center">
+<img src="./Experiment_3/cross.png">
+<br>
+<h4> Figure-3: Cross-correlation Graphical Output </h4> 
+</div>
+
+
+<br><br>
+
+
+<div align="center">
+<img src="./Experiment_3/cross_2.png">
+<br>
+<h4> Figure-4: Cross-correlation Result</h4> 
+</div>
+
+
+<br><br>
+
+
+### **<u>Discussion:</u>** 
+<br>
+:
+ Auto-correlation of a signal and cross-correlation of two signals were carried out
+without using any built-in function. The built-in function was also used to check whether the
+previous output was similar or not. The obtained result was same in both the cases. Signals, their
+auto-correlation and cross-correlation with and without built-in functions were all plotted in
+MATLAB.
+<br><br>
+
+### **<u>Conclusion:</u>**
+<br> 
+The experiment was carried out successfully.
+
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
 <div id='exp_4'>
 <br>
 <br>
